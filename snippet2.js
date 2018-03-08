@@ -1,11 +1,12 @@
 /**
+
+  FORK FOR DIVI 3.0.93
+
 This block possibly needs slight changes for new versions of Divi,
 because internal references changes with each update.
-
 The below module is based on the Divi "Code" module.
 So you have to locate that module in the bundle.js code 
 and compare it to the code below.
-
 Here are some tipps to do this:
 1. Go to the place where you added snippet1.js and identify the ID of the code block
    It might be `code: b.default` (next: find `b`)
@@ -24,23 +25,18 @@ Here are some tipps to do this:
 */
 
 // ---- START OF MODIFICATION ---- ##CHANGE2
-,  function(e, t, n) {
+, function(e, t, n) {
     "use strict";
-    function o(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    function a(e, t) {
+    function o(e, t) {
         if (!(e instanceof t))
             throw new TypeError("Cannot call a class as a function")
     }
-    function r(e, t) {
+    function a(e, t) {
         if (!e)
             throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
         return !t || "object" != typeof t && "function" != typeof t ? e : t
     }
-    function i(e, t) {
+    function r(e, t) {
         if ("function" != typeof t && null !== t)
             throw new TypeError("Super expression must either be null or a function, not " + typeof t);
         e.prototype = Object.create(t && t.prototype, {
@@ -53,10 +49,23 @@ Here are some tipps to do this:
         }),
         t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
     }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = function() {
+    var i = n(0)
+      , s = n.n(i)
+      , l = n(3)
+      , u = n.n(l)
+      , c = n(42)
+      , d = (n.n(c),
+    n(6))
+      , p = n.n(d)
+      , f = n(1)
+      , _ = n(19)
+      , h = n(35)
+      , m = n(13)
+      , g = n(18)
+      , b = n(12)
+      , v = n(14)
+      , y = n(20)
+      , w = function() {
         function e(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var o = t[n];
@@ -72,66 +81,75 @@ Here are some tipps to do this:
             t
         }
     }()
-      , l = n(1)
-      , u = o(l)
-      , d = n(2)
-      , c = o(d)
-      , p = n(46)
-      , f = n(7)
-      , _ = o(f)
-      , h = n(3)
-      , m = o(h)
-      , g = n(11)
-      , b = o(g)
-      , v = n(32)
-      , y = o(v)
-      , C = n(8)
-      , E = o(C)
-      , w = n(9)
-      , M = new p.AllHtmlEntities
-      , T = function(e) {
+      , k = new c.AllHtmlEntities
+      , C = function(e) {
         function t(e) {
-            a(this, t);
-            var n = r(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
-            return n.shouldComponentUpdate = c.default.shouldComponentUpdate.bind(n),
-            n.defaultClasses = w.defaultClasses.bind(n),
-            n.componentWillMount = w.componentWillMount.bind(n),
-            n.componentWillReceiveProps = w.componentWillReceiveProps.bind(n),
-            n.inheritModuleClassName = w.inheritModuleClassName.bind(n),
-            n.addModuleClassName = w.addModuleClassName.bind(n),
-            n.removeModuleClassName = w.removeModuleClassName.bind(n),
-            n.orderClassName = w.orderClassName.bind(n),
-            n.hideOnMobileClassName = w.hideOnMobileClassName.bind(n),
-            n.moduleClassNameArray = w.moduleClassNameArray.bind(n),
-            n.moduleClassName = w.moduleClassName.bind(n),
-            n.moduleID = w.moduleID.bind(n),
-            n.globalSavingClass = w.globalSavingClass.bind(n),
-            n.globalModuleClass = w.globalModuleClass.bind(n),
+            o(this, t);
+            var n = a(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+            return n.shouldComponentUpdate = u.a.shouldComponentUpdate.bind(n),
+            n.defaultClasses = b.e.bind(n),
+            n.componentWillMount = b.b.bind(n),
+            n.componentWillReceiveProps = b.c.bind(n),
+            n.inheritModuleClassName = b.i.bind(n),
+            n.addModuleClassName = b.a.bind(n),
+            n.removeModuleClassName = b.o.bind(n),
+            n.orderClassName = b.n.bind(n),
+            n.hideOnMobileClassName = b.h.bind(n),
+            n.moduleClassNameArray = b.l.bind(n),
+            n.moduleClassName = b.k.bind(n),
+            n.moduleID = b.m.bind(n),
+            n.globalSavingClass = b.g.bind(n),
+            n.globalModuleClass = b.f.bind(n),
+            n.textOrientationClassName = b.p.bind(n),
+            n.reinitAttrsList = Object(g.a)("unifiedBackground"),
+            n.reinitAttrs = {},
+            n._shouldReinit = v.d.bind(n),
+            n._updateLoadingStatus = v.f.bind(n),
+            n._isDoneLoading = v.c.bind(n),
+            n._initParallaxImageBackground = y.b.bind(n),
+            n._initVideoBackground = y.c.bind(n),
+            n._renderParallaxImageBackground = y.d.bind(n),
+            n._renderVideoBackground = y.e.bind(n),
             n
         }
-        return i(t, e),
-        s(t, [{
+        return r(t, e),
+        w(t, [{
+            key: "componentDidMount",
+            value: function() {
+                this._initParallaxImageBackground(),
+                this._initVideoBackground(),
+                this._shouldReinit(),
+                this._updateLoadingStatus()
+            }
+        }, {
+            key: "componentWillUpdate",
+            value: function() {
+                this.rerender = this._shouldReinit()
+            }
+        }, {
+            key: "componentDidUpdate",
+            value: function() {
+                (this.rerender || this._isDoneLoading()) && (this._initVideoBackground(),
+                this._initParallaxImageBackground()),
+                this._updateLoadingStatus()
+            }
+        }, {
             key: "render",
             value: function() {
                 var e = this.props.attrs
-                  , t = [];
-                if (m.default.hasValue(e.max_width_tablet) || m.default.hasValue(e.max_width_phone) || m.default.hasValue(e.max_width)) {
-                    var n = {
-                        desktop: e.max_width,
-                        tablet: e.max_width_tablet,
-                        phone: e.max_width_phone
-                    };
-                    t.push(m.default.generateResponsiveCss(n, "%%order_class%%", "max-width"))
-                }
-                var o = M.decode(this.props.content);
-                o = o.split("<!-- [et_pb_line_break_holder] -->").join("\n");
-                var a = (0,
-                _.default)({
-                    additional_css: t,
+                  , t = this._renderVideoBackground()
+                  , n = this._renderParallaxImageBackground()
+                  , o = [];
+                f.a.hasValue(t) && this.addModuleClassName("et_pb_section_video"),
+                f.a.isOn(e.parallax) && this.addModuleClassName("et_pb_section_parallax");
+                var a = k.decode(this.props.content);
+                a = a.split("\x3c!-- [et_pb_line_break_holder] --\x3e").join("\n");
+                var r = p()({
+                    additional_css: o,
                     moduleClassName: this.moduleClassNameArray()
                 }, this.props);
 
-                // This is the modified/important part:
+                 // This is the modified/important part:
                 var previewText = '', previewCallback = this.props.type + '_preview';
 
                 if ('function' === typeof window[previewCallback]) {
@@ -140,21 +158,24 @@ Here are some tipps to do this:
                     previewText = '<div style="text-align:center;border:2px solid rgba(0,0,0,0.5);background:rgba(0,0,0,0.05);padding:10px">No Preview Available</div>';
                 }
 
-                return u.default.createElement(
-                    b.default, a, u.default.createElement(
-                        'div', {
-                            dangerouslySetInnerHTML: {
-                                __html: previewText
-                            },
-                        }
-                    )
-                )
-                // End of the important part!
+                return s.a.createElement(_.a, r, n, t, s.a.createElement("div", {
+                    className: "et_pb_code_inner"
+                }, s.a.createElement(h.a, {
+                    text: a,
+                    dangerouslySetInnerHTML: {
+                        __html: previewText
+                    },
+                    tagName: "div",
+                    module: this,
+                    allModuleProps: this.props,
+                    name: "content",
+                    allowHTML: !0,
+                    doShortcode: !0
+                })))
             }
         }]),
         t
-    }(l.Component);
-    T.propTypes = E.default,
-    t.default = T
+    }(i.Component);
+    C.propTypes = m.a,
+    t.a = C
 }
-// ---- END OF MODIFICATION ----

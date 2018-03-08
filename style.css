@@ -1,0 +1,30 @@
+
+/* Header shapes */
+
+.custom_header_shapes {
+    min-height: 432px;
+    background: #8a8a8a;
+    padding: 0;
+}
+.custom_header_shapes .shapes {
+  position: absolute;
+  min-height: 432px;
+  height: 100%;
+  width: 100%;
+}
+.custom_header_shapes .triangle {
+  position: absolute;
+}
+.custom_header_shapes .triangle-first {
+  height: 100%;
+  fill: white;
+  fill-opacity: 0.9;
+  z-index: 1;
+}
+.custom_header_shapes .triangle-second {
+  width: 230px;
+  bottom: 0;
+  fill: #607D8B;
+  fill-opacity: 0.9;
+  z-index: 1;
+}
