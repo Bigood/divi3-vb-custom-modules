@@ -3,25 +3,27 @@
 # Fork of [Phil Stracker Divi 3 Custom module](https://github.com/stracker-phil/divi3-vb-custom-modules) for Divi 3.0.93
 
 ## Info
+
 It includes an example, *banner-shapes-module.php*, that is a full width component cloned from *fullwidth-header* module.
 
-I've updated the code in the snippets to match v3.0.93. 
+I've updated the code in the snippets to match v3.0.93. Credits to Jonathan Bossenger and Phil Stracker for making this possible.
 
 ## Build your own module (inspired from [this tutorial](https://jonathanbossenger.com/building-your-own-divi-builder-modules/))
 
-1- Choose a file from path-to-Divi-theme-folder/includes/builder/Modules/*
-2- Copy the entire class of the module you want to use including that last ‘new ET_Builder’ line and paste it inside your module file, replacing the comment of *Copy your class here and tweak it*.
-3- Change the class name, the slug and the display name to something unique
-4- Add this function to your class
-    function js_frontend_preview() {
-      ?><script>
-      window.<?php echo $this->slug; ?>_preview = function(args) {
-        return 'CUSTOM HTML YOU WANT TO PREVIEW WHILE EDITING WITH VISUAL BUILDER' 
+1. Choose a file from path-to-Divi-theme-folder/includes/builder/Modules/*
+2. Copy the entire class of the module you want to use including that last ‘new ET_Builder’ line and paste it inside your module file, replacing the comment of *Copy your class here and tweak it*.
+3. Change the class name, the slug and the display name to something unique
+4. Add this function to your class
 
-      }
-      </script><?php
-    }
-5- Add the hook in the init() function that will call this function when appropriate
+        function js_frontend_preview() {
+          ?><script>
+          window.<?php echo $this->slug; ?>_preview = function(args) {
+            return 'CUSTOM HTML YOU WANT TO PREVIEW WHILE EDITING WITH VISUAL BUILDER' 
+        
+          }
+          </script><?php
+        }
+5. Add the hook in the init() function that will call this function when appropriate
     add_action( 'wp_footer', array( $this, 'js_frontend_preview' ) );
 
 ## Important info
@@ -47,6 +49,7 @@ If you want to create a non-fullwidth module, use *code* like in the original pr
 
 
 You'll also have to modify in the snippet1.js this bit of code
+
     //Use exp.b for a non-fullwidth module
     //exp.b[module] = def(arguments[2](moduleId)).default.a;
 
@@ -92,3 +95,27 @@ Paste the contents of **snippet2.js** at the end of the file, right before the f
 Save and you're done! :)
 
 Reload your website and test Divi. It will show your custom modules.
+
+---
+
+Licence MIT
+
+Copyright (c) 2018 @Bigood
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
